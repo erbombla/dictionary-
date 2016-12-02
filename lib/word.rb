@@ -1,18 +1,18 @@
 class Word
   @@words = []
-  attr_reader(:word)
+  attr_reader(:word, :pOs)
 
 #Class Initialization
-  def initialize(word)
-    @word = word.capitalize
+  def initialize(attributes)
+    @word = attributes[:word]
+    @pOs = attributes[:pOs]
   end
 
-#Instance Methods
+#Class Methods
   def save
     @@words.push(self)
   end
 
-#Class Methods
   def self.all
     @@words
   end
@@ -20,4 +20,4 @@ class Word
   def self.clear
     @@words =[]
   end
-end 
+end
