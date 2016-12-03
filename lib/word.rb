@@ -7,7 +7,6 @@ class Word
     @word = attributes[:word]
     @pOs = attributes[:pOs]
     @id = @@words.length + 1
-    # @definitions = []
   end
 
 #----Class Methods---
@@ -39,12 +38,3 @@ class Word
   end
 
 end
-#----Definition Methods----
-
-# def addDefinition(definition)
-#   @definitions.push(definition)
-# end
-#
-# def definitions
-#   @definitions
-# end
