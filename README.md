@@ -22,6 +22,7 @@ _Specifications_
 
 ## Known Bugs
 
+* No known bugs as of this version 
 
 ## Support and contact details
 
