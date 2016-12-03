@@ -36,10 +36,26 @@ describe 'Word' do
   end
 
   describe '#pOs' do
-    it 'returns part of speech for a word' do
+    it 'returns the part of speech for a word' do
       test_word = Word.new({word: 'loquacious', pOs: 'adj'})
       expect(test_word.pOs).to eq('adj')
     end
   end
 
+  describe '#id' do
+    it 'returns a word id' do
+      test_word = Word.new({word: 'loquacious'})
+      expect(test_word.id).to eq(1)
+    end
+  end
+
+  describe '.find' do
+    it 'returns a word by its unique id' do
+      test_word = Word.new({word: 'loquacious'})
+      test_word.save
+      test_word2 = Word.new({word: 'stridency'})
+      test_word2.save
+      expect(Word.find(test_word.id)).to eq(test_word)
+    end
+  end
 end
