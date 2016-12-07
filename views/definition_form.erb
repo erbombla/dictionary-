@@ -1,43 +1,29 @@
-<div class="jumbotron">
-  <h1>Personal Dictionary
-  </h1>
-</div>
-<form action="/form_action">
+<h2> Add Definiton for <%= @word.id %> </h2>
 
-  <!-- Select boxes -->
-  <select class="form-control" name="Variable-Template">
-  <option>var1</option>
-  <option>var2</option>
-  <option>var3</option>
-  </select>
+<form action="/definition" method = 'post'>
+  <input type = 'hidden' id = 'id' name = 'id' value = '<%= @word.id %>'>
 
-  <!-- Forms -->
   <div class="form-group">
-    <label for="person1">A name</label>
-    <input id="person1" class="form-control" type="text">
-  </div>
-  <div class="form-group">
-    <label for="person2">Another name</label>
-    <input id="person2" class="form-control" type="text">
-  </div>
-  <div class="form-group">
-    <label for="animal">An animal</label>
-    <input id="animal" class="form-control" type="text">
+    <label for="definition">Definition</label>
+      <input id="definiton" name="definition" class="form-control" type="text">
   </div>
 
-  <!-- Radio -->
-  <div class="radio">
-    <label>
-      <input type="radio" name="flavor" value="chocolate" checked>
-      Chocolate
-    </label>
+  <div class="radio-inline">
+    <input id="noun" type="radio" name="pOs" value="noun" checked>
+      <label for = "noun">Noun</label>
   </div>
-  <div class="radio">
-    <label>
-      <input type="radio" name="flavor" value="vanilla">
-      Vanilla
-    </label>
+  <div class="radio-inline">
+    <input id="verb" type="radio" name="pOs" value="verb" checked>
+      <label for = "verb">Verb</label>
   </div>
-  <div class="radio">
-  <button type="submit" class="btn-success">Button Text</button>
+  <div class="radio-inline">
+    <input id="adverb" type="radio" name="pOs" value="adverb" checked>
+      <label for = "adverb">Adverb</label>
+  </div>
+  <div class="radio-inline">
+    <input id="adj" type="radio" name="pOs" value="adj" checked>
+      <label for = "adj">Adjective</label>
+  </div>
+
+  <button type="submit" class="btn btn-success">Submit</button>
 </form>
