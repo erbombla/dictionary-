@@ -2,14 +2,12 @@ class Word
   @@words = []
   attr_reader(:word, :pOs)
 
-#---Class Initialization---
   def initialize(attributes)
     @word = attributes[:word]
     @pOs = attributes[:pOs]
     @id = @@words.length + 1
   end
 
-#----Class Methods---
   def save
     @@words.push(self)
   end
@@ -22,7 +20,6 @@ class Word
     @@words =[]
   end
 
-#----Find Methods----
   def id
     @id
   end

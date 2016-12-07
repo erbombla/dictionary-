@@ -6,8 +6,8 @@ require 'definition'
 describe 'Definition' do
   describe '#define' do
     it 'returns a definition' do
-      test_definition = Definition.new({define: 'tending to talk a great deal'})
-      expect(test_definition.define).to eq('tending to talk a great deal')
+      new_definition = Definition.new({define: 'tending to talk a great deal'})
+      expect(new_definition.define).to eq('tending to talk a great deal')
     end
   end
 
@@ -19,8 +19,8 @@ describe 'Definition' do
 
   describe '#save' do
     it 'saves a definition to the array' do
-      test_definition = Definition.new({define: 'tending to talk a great deal'})
-      expect(test_definition.save).to eq([test_definition])
+      new_definition = Definition.new({define: 'tending to talk a great deal'})
+      expect(new_definition.save).to eq([new_definition])
     end
   end
 end

@@ -10,8 +10,8 @@ describe 'Word' do
 
   describe '#word' do
     it 'returns a word' do
-      test_word = Word.new({word: 'loquacious'})
-      expect(test_word.word).to eq('loquacious')
+      new_word = Word.new({word: 'loquacious'})
+      expect(new_word.word).to eq('loquacious')
     end
   end
 
@@ -23,40 +23,40 @@ describe 'Word' do
 
   describe '.save' do
     it 'saves a word to the array' do
-      test_word = Word.new({word: 'loquacious'})
-      expect(test_word.save).to eq([test_word])
+      new_word = Word.new({word: 'loquacious'})
+      expect(new_word.save).to eq([new_word])
     end
   end
 
   describe '.clear' do
     it 'clears the array' do
-      test_word = Word.new({word: 'loquacious'})
-      test_word.save
+      new_word = Word.new({word: 'loquacious'})
+      new_word.save
       expect(Word.clear).to eq([])
     end
   end
 
   describe '#pOs' do
     it 'returns the part of speech for a word' do
-      test_word = Word.new({word: 'loquacious', pOs: 'adj'})
-      expect(test_word.pOs).to eq('adj')
+      new_word = Word.new({word: 'loquacious', pOs: 'adj'})
+      expect(new_word.pOs).to eq('adj')
     end
   end
 
   describe '#id' do
     it 'returns a word id' do
-      test_word = Word.new({word: 'loquacious'})
-      expect(test_word.id).to eq(1)
+      new_word = Word.new({word: 'loquacious'})
+      expect(new_word.id).to eq(1)
     end
   end
 
   describe '.find' do
     it 'returns a word by its unique id' do
-      test_word = Word.new({word: 'loquacious'})
-      test_word.save
-      test_word2 = Word.new({word: 'stridency'})
-      test_word2.save
-      expect(Word.find(test_word.id)).to eq(test_word)
+      new_word = Word.new({word: 'loquacious'})
+      new_word.save
+      new_word2 = Word.new({word: 'stridency'})
+      new_word2.save
+      expect(Word.find(new_word.id)).to eq(new_word)
     end
   end
 end

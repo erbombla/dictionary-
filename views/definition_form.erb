@@ -1,28 +1,17 @@
-<h2> Add Definiton for <%= @word.id %> </h2>
+<h2> Definiton for <%= @word.id %> </h2>
+<hr>
 
-<form action="/definition" method = 'post'>
+<form action="/definition_form" method = 'post'>
   <input type = 'hidden' id = 'id' name = 'id' value = '<%= @word.id %>'>
 
   <div class="form-group">
     <label for="definition">Definition</label>
-      <input id="definiton" name="definition" class="form-control" type="text">
+      <input id="definiton" name="definition" class="form-control" type="text" placeholder="Definition">
   </div>
 
-  <div class="radio-inline">
-    <input id="noun" type="radio" name="pOs" value="noun" checked>
-      <label for = "noun">Noun</label>
-  </div>
-  <div class="radio-inline">
-    <input id="verb" type="radio" name="pOs" value="verb" checked>
-      <label for = "verb">Verb</label>
-  </div>
-  <div class="radio-inline">
-    <input id="adverb" type="radio" name="pOs" value="adverb" checked>
-      <label for = "adverb">Adverb</label>
-  </div>
-  <div class="radio-inline">
-    <input id="adj" type="radio" name="pOs" value="adj" checked>
-      <label for = "adj">Adjective</label>
+  <div class="form-group">
+    <label for="pOs">Part of Speech</label>
+    <input id="pOs" name="pOs" class="form-control" type="text" placeholder="Noun, Verb, Adj, etc.">
   </div>
 
   <button type="submit" class="btn btn-success">Submit</button>
