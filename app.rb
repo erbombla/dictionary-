@@ -14,29 +14,20 @@ get '/word_form/new' do
 end
 
  post '/word_form' do
+   user_word = params[:user_word]
    new_word = Word.new({word: params[:user_word]})
    new_word.save
    erb :index
 end
 
-get '/index/:id' do
-  @word = Word.find_word(params[:id])
-  erb :index
+get '/definition/:word' do
+  @word = Word.find_word(params[:word])
+  erb :definition
 end
 
-get '/index/:id/new_definition' do
-  @word = Word.find_word(params[:id])
-  erb :definition_form
-end
-
-post '/definition/_form' do
-  @word = Word.find_word(params[:id])
-  new_definition = Definition.new({pOs: params[:pOs], definition: params[:definition]})
-  @word.add_definition(new_definition)
-  new_definition.save
-  erb :index
-end
-
-get 'definition' do
-  erb :word
+post '/definition_form' do
+  user_def = params[:user_definition]
+  new_def = Definition.new({define: user_definition})
+  Word.find_word(params[:definition_id]).save_definiton(new_definition)
+  erb :definition
 end
