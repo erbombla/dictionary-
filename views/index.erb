@@ -1,12 +1,9 @@
-
-<h2>Your Dictionary </h2>
+<h2> Saved Words </h2>
 <hr>
-
-<h3> Saved Words </h3>
   <ul>
     <% @words.each() do |word| %>
-    <li> <a href="/dictionary/<%=word.id %>"><%= word.word_title %></a></li>
+    <li> <a href="/definition/<%=word.word %>"><%= word.word %></a></li>
     <% end %>
   </ul>
 
-<a href="/words/new"><button class="btn btn-success">Add Word</button></a>
+<a href="/word_form/new"><button class="btn btn-success">Add Word</button></a>

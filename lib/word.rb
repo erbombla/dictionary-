@@ -6,10 +6,19 @@ class Word
     @word = attributes[:word]
     @pOs = attributes[:pOs]
     @id = @@words.length + 1
+    @definitions = []
   end
 
   def save
     @@words.push(self)
+  end
+
+  def definitions
+    @definitions
+  end
+
+  def save_definiton(definition)
+    @definitions.push(definition)
   end
 
   def self.all

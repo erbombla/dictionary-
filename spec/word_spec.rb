@@ -59,4 +59,12 @@ describe 'Word' do
       expect(Word.find(new_word.id)).to eq(new_word)
     end
   end
+
+  describe '#save_definiton' do
+    it 'saves a new instance of a definition to an array' do
+      new_word = Word.new({word: 'loquacious', pOs: 'adj'})
+      new_definition = Definition.new({define: 'tending to talk a great deal'})
+      expect(new_word.save_definiton(new_definition)).to eq([new_definition])
+    end
+  end 
 end
