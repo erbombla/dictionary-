@@ -1,8 +1,9 @@
 <h2> Saved Words </h2>
 <hr>
+<h4>Select a word to add a definition</h4>
   <ul>
-    <% @words.each() do |word| %>
-      <li> <a href="/definition/<%=word.word %>"><%= word.word %></a></li>
+    <% @word_array.each() do |word| %>
+      <li><a href="/definition_form/new<%= definition.id %>"><%= word.word %></a></li>
     <% end %>
   </ul>
 

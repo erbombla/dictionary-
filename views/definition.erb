@@ -1,15 +1,13 @@
-<h2> <%= @word.word_title %></h2>
+<h2> <%= @words.word %> </h2>
 <hr>
 
-<ul>
-  <% @word.definitions.each do |definition| %>
-    <p>Definition:</p>
-      <li><%= definition.definition %>
-    <p>Part of speech:</p>
-      <li><%= definition.pOs %></li>
-  </li>
-  <% end %>
+<h3>Definition</h3>
+  <ul>
+    <% @words.definitions.each do |definition| %>
+      <li><%= definition.define %></li>
+    <% end %>
+  </ul>
+
+
 <br>
-</ul>
-<a href="/dictionary/<%= @word.id %>/new_definition"><button class="btn btn-success">Add Definition</button></a>
-<a href="/index"><button class="btn btn-primary">Home</button></a>
+<a href="/"><button class="btn btn-primary">Home</button></a>
