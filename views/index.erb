@@ -1,10 +1,21 @@
+<h2> New Entry </h2>
+<hr>
+<form class="form-group" action="/word_form" method="post">
+  <label for="user_word">Word</label>
+  <input id="user_word" name="user_word" class="form-control" type="text" placeholder="Word" required>
+  <label for="user_definition">Definition</label>
+  <input id="user_definiton" name="user_definition" class="form-control" type="text" placeholder="Definition" required>
+  <label for="user_pOs">Part of Speech</label>
+  <input id="user_pOs" name="user_pOs" class="form-control" type="text" placeholder="Noun, Verb, Adj, etc.">
+  <br>
+  <button type = "submit" class="btn btn-primary">Add</button>
+</form>
+
 <h2> Saved Words </h2>
 <hr>
-<h4>Select a word to add a definition</h4>
+<h4>Select a word to view definition</h4>
   <ul>
-    <% @word_array.each() do |word| %>
-      <li><a href="/definition_form/new<%= definition.id %>"><%= word.word %></a></li>
+    <% @words.each() do |entry| %>
+      <li><a href="/word_form/<%= entry.id %>"><%= entry.word %></a></li>
     <% end %>
   </ul>
-
-<a href="/word_form/new"><button class="btn btn-success">Add Word</button></a>

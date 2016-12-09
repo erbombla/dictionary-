@@ -1,16 +1,12 @@
-<h2> Definiton for <%= @words.id %> </h2>
+<h2> Add Definition for <%= @displayed.word %> </h2>
 <hr>
 
-<form action="/definition_form" method = 'post'>
-    <input type = 'hidden' id = 'definition_id' name = 'definition_id' value = '<%= @words.id %>'>
-
-    <div class="form-group">
-      <label for="user_definition">Definition</label>
-      <input id="user_definiton" name="user_definition" class="form-control" type="text" placeholder="Definition" required>
-
-      <label for="user_pOs">Part of Speech</label>
-      <input id="user_pOs" name="user_pOs" class="form-control" type="text" placeholder="Noun, Verb, Adj, etc.">
-      <br>
-      <button type="submit" class="btn btn-success">Add</button>
-    </div>
+<form class="form-group"action="/definition_form" method = 'post'>
+  <input type = 'hidden' id = 'definition_id' name = 'definition_id' value = '<%= @definition_id.id %>'>
+    <label for="new_definition">Definition</label>
+    <input id="new_definition" name="new_definition" class="form-control" type="text" placeholder="Definition" required>
+    <label for="new_pOs">Part of Speech</label>
+    <input id="new_pOs" name="new_pOs" class="form-control" type="text" placeholder="Noun, Verb, Adj, etc.">
+    <br>
+    <button type="submit" class="btn btn-primary">Add</button>
 </form>
