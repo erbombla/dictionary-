@@ -1,12 +1,9 @@
-<h2> <%= @displayed.word %> </h2>
-<hr>
-
 <h4>Definition(s)</h4>
   <ul>
-    <% @displayed.definitions.each do |definition| %>
+    <% @definition.each do |definition| %>
       <li><em><%= definition.user_pOs %></em> : <%= definition.user_definition %></li>
     <% end %>
   </ul>
 
-<a class="btn btn-primary" id="added_definition" href="/word_form/<%= @displayed.id %>/definition_form">Add New Definition</a>
+<a class="btn btn-primary" href= "/definition_form">Add New Definition</a>
 <a class="btn btn-success" id="home" href="/">View</a>

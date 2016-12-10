@@ -24,6 +24,18 @@ end
 get '/word_form/:id' do
   @displayed_id = params.fetch('id').to_i
   @displayed = Word.find(@displayed_id)
-  @displayed_pOs = Definition.find(params.fetch('id').to_i())
   erb :definition
+end
+
+get '/definition/:id' do
+  @definition = Definition.find(params.fetch('id').to_i())
+  erb :definition
+end
+
+post '/definition_form' do
+  new_definition = params.fetch('new_definition')
+  new_pOs = params.fetch('new_pOS')
+  definition = Definition.new({define: @new_definition, pOs: @new_pOs})
+  definition.save
+  erb :success
 end

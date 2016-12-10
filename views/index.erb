@@ -1,5 +1,6 @@
 <h2> New Entry </h2>
 <hr>
+
 <form class="form-group" action="/word_form" method="post">
   <label for="user_word">Word</label>
   <input id="user_word" name="user_word" class="form-control" type="text" placeholder="Word" required>
@@ -15,7 +16,7 @@
 <hr>
 <h4>Select a word to view definition</h4>
   <ul>
-    <% @words.each() do |entry| %>
-      <li><a href="/word_form/<%= entry.id %>"><%= entry.word %></a></li>
+    <% @words.each() do |word| %>
+      <li><a href="/definition/:id"<%= word.id %>"><%= word.word %></a></li>
     <% end %>
   </ul>
