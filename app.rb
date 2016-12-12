@@ -28,7 +28,6 @@ get '/word_form/:id' do
 end
 
 get '/definition/:id' do
-  @definition = Definition.find(params.fetch('id').to_i())
   erb :definition
 end
 
