@@ -1,10 +1,11 @@
 class Definition
 
   @@definitions = []
-  attr_reader(:define)
+  attr_reader(:define, :pOs)
 
   def initialize(attributes)
     @define = attributes[:define]
+    @pOS = attributes[:pOs]
   end
 
   def save

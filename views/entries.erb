@@ -1,0 +1,22 @@
+<div class = "page-header">
+  <h2> Entries </h2>
+<div>
+
+<h3> Select a Word to add a Definition </h3>
+<hr>
+  <% @words.each() do |word| %>
+    <li><a href="/word_form/<%= word.id() %>"><%= word.word() %></a></li>
+  <% end %>
+</ul>
+
+<h3> Saved Words </h3>
+<hr>
+  <%= @word.word() %>
+  <h4>Definitions</h4>
+  <ul>
+    <% @define.each() do |definition| %>
+      <li><%= definition.define() %></li>
+    <% end %>
+  </ul>
+
+<a href="/"><button type="button" name="button" class="btn btn-info"></button>Home</a>

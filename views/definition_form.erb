@@ -1,0 +1,14 @@
+<h2> Add Definition to <%= @word.word() %> </h2>
+<hr>
+
+<form class="form-group"action="/definition_form" method = 'post'>
+  <input id='word_id' name='word_id' type='hidden' value='<%= @word.id() %>'>
+  <label for="user_definition">Definition</label>
+  <input id="user_definition" name="user_definition" class="form-control" type="text" placeholder="Definition" required>
+  <label for="user_pOs">Part of Speech</label>
+  <input id="user_pOs" name="user_pOs" class="form-control" type="text" placeholder="Noun, Verb, Adj, etc.">
+  <br>
+  <button type="submit" class="btn btn-success">Add</button>
+</form>
+
+<a href="/"><button type="button" name="button" class="btn btn-info"></button>Home</a>
