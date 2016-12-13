@@ -1,9 +1,10 @@
 class Word
   @@words = []
-  attr_reader(:word)
+  attr_reader(:word, :pOs)
 
   def initialize(attributes)
     @word = attributes[:word]
+    @pOs = attributes[:pOs]
     @id = @@words.length + 1
     @definitions = []
   end

@@ -15,6 +15,13 @@ describe 'Word' do
     end
   end
 
+  describe '#pOs' do
+    it 'returns the part of speech for a word' do
+      new_word = Word.new({word: 'loquacious', pOs: 'adj'})
+      expect(new_word.pOs).to eq('adj')
+    end
+  end
+
   describe '.all' do
     it 'initializes empty array' do
       expect(Word.all).to eq([])
@@ -33,13 +40,6 @@ describe 'Word' do
       new_word = Word.new({word: 'loquacious'})
       new_word.save
       expect(Word.clear).to eq([])
-    end
-  end
-
-  describe '#pOs' do
-    it 'returns the part of speech for a word' do
-      new_word = Word.new({word: 'loquacious', pOs: 'adj'})
-      expect(new_word.pOs).to eq('adj')
     end
   end
 
@@ -66,5 +66,5 @@ describe 'Word' do
       new_definition = Definition.new({define: 'tending to talk a great deal'})
       expect(new_word.save_definiton(new_definition)).to eq([new_definition])
     end
-  end 
+  end
 end

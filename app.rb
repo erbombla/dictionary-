@@ -5,37 +5,30 @@ require './lib/definition'
 also_reload 'lib/**/*.rb'
 
 get '/' do
+  @words = Word.all
   erb :index
 end
 
-get '/word_form' do
-  @words = Word.all()
-  erb :entries
-end
+# get '/word_form' do
+#   @words = Word.all()
+# end
 
 post '/word_form' do
  user_word = params.fetch('user_word')
- Word.new({word: user_word}).save()
- @words = Word.all()
- erb :entries
+ user_pOs = params.fetch('user_pOs')
+ new_word = Word.new({word: user_word, pOs: user_pOs})
+ new_word.save
+ erb :success
 end
 
-get '/word_form/:id/definition_form/new' do
-  @word = Word.find(params.fetch('id').to_i())
-  erb :definition_form
-end
-
-get '/entries/:id' do
-  @word = Word.find(params.fetch('id').to_i())
-  @define = @words.define()
-  erb :definition_form
+get '/definition/:word' do
+  @word = Word.find(params[:word])
+  erb :definition
 end
 
 post '/definition_form' do
-  @word = Word.find(params.fetch('word_id').to_i())
-  definition = params.fetch('user_definition')
-  pOs = params.fetch('user_pOs')
-  @word.save(Definition.new({define: definition}))
-  @define = @word.define.()
-  erb :entries
+  user_definition = params[:user_definition]
+  new_definition = Definition.new({define: user_definition})
+  Word.find(params[:definition_id]).save_definition(new_definition)
+  erb :success
 end
