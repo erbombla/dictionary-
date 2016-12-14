@@ -21,13 +21,14 @@ post '/word_form' do
  erb :success
 end
 
-get '/definition/:word' do
-  @word = Word.all
+get '/definition/:id' do
+  @word = Word.find(params.fetch('id').to_i)
+  erb(:definition)
 end
 
 post '/definition_form' do
   user_definition = params.fetch('user_definition')
   new_definition = Definition.new({define: user_definition})
-  new_definition.save
+  Word.find_word(params.fetch('definition_id').to_i()).save_definiton(new_definition)
   erb :success
 end

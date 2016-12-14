@@ -50,21 +50,14 @@ describe 'Word' do
     end
   end
 
-  describe '.find' do
-    it 'returns a word by its unique id' do
-      new_word = Word.new({word: 'loquacious'})
-      new_word.save
-      new_word2 = Word.new({word: 'stridency'})
-      new_word2.save
-      expect(Word.find(new_word.id)).to eq(new_word)
-    end
-  end
+  describe('.find') do
+   it('finds a words unique ID in an array') do
+     test_word = Word.new(:word => "hello")
+     test_word.save()
+     test_word2 = Word.new(:word => "hello")
+     test_word2.save()
+     expect(Word.find(test_word.id())).to(eq(test_word))
+   end
+ end
 
-  describe '#save_definiton' do
-    it 'saves a new instance of a definition to an array' do
-      new_word = Word.new({word: 'loquacious', pOs: 'adj'})
-      new_definition = Definition.new({define: 'tending to talk a great deal'})
-      expect(new_word.save_definiton(new_definition)).to eq([new_definition])
-    end
-  end
 end

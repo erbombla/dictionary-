@@ -1,6 +1,6 @@
 class Word
   @@words = []
-  attr_reader(:word, :pOs)
+  attr_reader(:word, :pOs, :id)
 
   def initialize(attributes)
     @word = attributes[:word]
@@ -33,14 +33,14 @@ class Word
     @id
   end
 
-  define_singleton_method (:find) do |identification|
+  define_singleton_method(:find) do |id|
     found_word = nil
     @@words.each() do |word|
-      if word.id() == identification
+      if word.id.eql?(id)
         found_word = word
       end
     end
     found_word
   end
-
+  
 end

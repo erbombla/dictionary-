@@ -2,7 +2,7 @@
   <h2> Definitions </h2>
 </div>
 
-<h3> New Definition </h3>
+<h3> New Definition for <%= @word.word %> </h3>
     <form action="/definition_form" method="post">
     <input id='definition_id' name='definition_id' type='hidden'>
       <div class="form-group">
@@ -16,6 +16,6 @@
 <h3> Saved Definitions  </h3>
   <ul>
     <% @word.definitions.each do |definition| %>
-    <li><%= definition.definition %></li>
+    <li><%= definition.define %></li>
     <% end %>
   </ul>
