@@ -9,10 +9,6 @@ get '/' do
   erb :index
 end
 
-# get '/word_form' do
-#   @words = Word.all()
-# end
-
 post '/word_form' do
  user_word = params.fetch('user_word')
  user_pOs = params.fetch('user_pOs')
@@ -29,6 +25,6 @@ end
 post '/definition_form' do
   user_definition = params.fetch('user_definition')
   new_definition = Definition.new({define: user_definition})
-  Word.find_word(params.fetch('definition_id').to_i()).save_definiton(new_definition)
+  new_definition.save
   erb :success
 end

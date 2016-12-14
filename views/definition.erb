@@ -1,10 +1,10 @@
 <div class = "page-header">
-  <h2> Definitions </h2>
+  <h2> <span class="text-info"><%= @word.word %></span> </h2>
 </div>
 
-<h3> New Definition for <%= @word.word %> </h3>
+<h3> New Definition </h3>
     <form action="/definition_form" method="post">
-    <input id='definition_id' name='definition_id' type='hidden'>
+    <input id='definition_id' name='definition_id' type='hidden' value='<%= @word.word %>'>
       <div class="form-group">
         <input id="user_definition" name="user_definition" class="form-control" type="text" placeholder="Definition" required>
       </div>
@@ -15,7 +15,5 @@
 
 <h3> Saved Definitions  </h3>
   <ul>
-    <% @word.definitions.each do |definition| %>
-    <li><%= definition.define %></li>
-    <% end %>
+    <% @user_definition.define %></li>
   </ul>

@@ -1,4 +1,4 @@
-<div class = "page-header">
+s<div class = "page-header">
   <h2> Home </h2>
 </div>
 
@@ -14,7 +14,7 @@
 </form>
 
 <h3> Saved Words </h3>
-<p> Select a word to view and add a definition </p>
+<p><strong> Select a word to view and add a definition </strong></p>
   <ul>
     <% @words.each do |word| %>
     <li><a href="/definition/<%= word.id %>"><%= word.word %></a></li>
