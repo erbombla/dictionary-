@@ -22,7 +22,7 @@ post '/word_form' do
 end
 
 get '/definition/:word' do
-  @words = Word.all()
+  @word = Word.all
 end
 
 post '/definition_form' do
