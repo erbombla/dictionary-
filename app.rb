@@ -6,6 +6,7 @@ also_reload 'lib/**/*.rb'
 
 get '/' do
   @words = Word.all
+  @pOs = Word.all
   erb :index
 end
 
@@ -19,12 +20,15 @@ end
 
 get '/definition/:id' do
   @word = Word.find(params.fetch('id').to_i)
+  @pOs = Word.find(params.fetch('id').to_i)
   erb(:definition)
 end
 
 post '/definition_form' do
   user_definition = params.fetch('user_definition')
-  new_definition = Definition.new({define: user_definition})
-  new_definition.save
+  @definition = Definition.new({:define => user_definition})
+  @definition.save
+  @word = Word.find(params.fetch('definition_id').to_i)
+  @word.save_definition(@definition)
   erb :success
 end

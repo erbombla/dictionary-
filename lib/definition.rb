@@ -4,7 +4,7 @@ class Definition
   attr_reader(:define)
 
   def initialize(attributes)
-    @define = attributes[:define]
+    @define = attributes.fetch(:define)
   end
 
   def save

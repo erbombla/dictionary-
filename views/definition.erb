@@ -4,7 +4,7 @@
 
 <h3> New Definition </h3>
     <form action="/definition_form" method="post">
-    <input id='definition_id' name='definition_id' type='hidden' value='<%= @word.word %>'>
+    <input id='definition_id' name='definition_id' type='hidden' value='<%= @word.id %>'>
       <div class="form-group">
         <input id="user_definition" name="user_definition" class="form-control" type="text" placeholder="Definition" required>
       </div>
@@ -13,7 +13,13 @@
   <br>
   <a href="/"><button type='button' class="btn btn-info">Home</button></a>
 
+<% if !@word.nil? %>
 <h3> Saved Definitions  </h3>
   <ul>
-    <% @user_definition.define %></li>
+    <% @word.definitions().each() do |definition| %>
+    <li><span class="text-info"><em><%= @pOs.word %></em>.</span> <%= definition.define %></li>
+    <% end %>
   </ul>
+<% else %>
+<h4> No saved definitions </h4>
+<%end%>

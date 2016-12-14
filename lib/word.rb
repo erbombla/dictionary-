@@ -17,7 +17,7 @@ class Word
     @definitions
   end
 
-  def save_definiton(definition)
+  def save_definition(definition)
     @definitions.push(definition)
   end
 
@@ -42,5 +42,5 @@ class Word
     end
     found_word
   end
-  
+
 end
