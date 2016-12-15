@@ -18,7 +18,7 @@ _Specifications_
 * Run `$ bundle`
 * Run `$ ruby app.rb`
 * Navigate to http://localhost:4567/ in your web browser
-* You may also view it on Heroku [here](...)
+* You may also view it on Heroku [here](https://guarded-sierra-50261.herokuapp.com/)
 
 ## Known Bugs
 
